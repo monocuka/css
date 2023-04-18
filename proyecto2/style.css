@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+}
+#a{
+    background-color:rgb(255, 255, 129) ;
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ;
+    
+}
+#b{
+    background-color: aquamarine;
+}
+#c{
+    background-color: rgb(83, 173, 251);
+}
+#d{
+    background-color: rgb(250, 96, 199);
+}
+#e{
+    background-color: rgb(255, 167, 105);
+}
+#f{
+    background-color: rgb(221, 120, 249);
+}
