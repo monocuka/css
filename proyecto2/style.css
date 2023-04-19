@@ -4,7 +4,9 @@
 #a{
     background-color:rgb(255, 255, 129) ;
     display: flex;
+    height: 200px;
     justify-content: center;
+    align-items: center;
     color: rgb(0, 0, 0);
     font-family:'Franklin Gothic';
     font-size: 4em;
@@ -13,16 +15,61 @@
 }
 #b{
     background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64%;
+    height: 200px;
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ;
 }
 #c{
     background-color: rgb(83, 173, 251);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ; 
+    
 }
 #d{
     background-color: rgb(250, 96, 199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ; 
 }
 #e{
     background-color: rgb(255, 167, 105);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ; 
 }
 #f{
     background-color: rgb(221, 120, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 500px;
+    font-family:'Franklin Gothic';
+    font-size: 4em;
+    margin:1% ; 
+    position:relative;
+    left: 65%;
+    bottom: 523px;
+}
+#card{
+    display: flex;
+    height: 300px;
 }
