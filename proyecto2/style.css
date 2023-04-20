@@ -1,16 +1,16 @@
 *{
-    margin: 0;
+    margin: 1%;
 }
 #a{
     background-color:rgb(255, 255, 129) ;
     display: flex;
-    height: 200px;
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
     font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ;
+    font-size: 5em;
+    margin:1% 2% 2% 1%;
+    padding: 6%;
     
 }
 #b{
@@ -18,58 +18,127 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64%;
-    height: 200px;
+    color: rgb(0, 0, 0);
     font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ;
+    font-size: 5em;
+    margin: 1px;
+    padding:20%;
 }
 #c{
     background-color: rgb(83, 173, 251);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ; 
-    
+    width: 33%;
+    margin: 2%;   
+    font-size: 5em;
+    padding-top:12% ;
+    padding-bottom:12%; ;
 }
 #d{
     background-color: rgb(250, 96, 199);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ; 
+    font-size: 5em;
+    width: 33%;
+    margin: 2%;  
 }
 #e{
     background-color: rgb(255, 167, 105);
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 20%;
-    font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ; 
+    align-items: center; 
+    font-size: 5em;
+    width: 33%;
+    margin: 2%;  
 }
 #f{
     background-color: rgb(221, 120, 249);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 33%;
-    height: 500px;
-    font-family:'Franklin Gothic';
-    font-size: 4em;
-    margin:1% ; 
-    position:relative;
-    left: 65%;
-    bottom: 523px;
+    font-size: 5em;
+    margin: 1%;
+    padding: 15%;
 }
 #card{
     display: flex;
-    height: 300px;
+    margin: 1%;
+}
+
+@media (min-width: 600px) {
+   
+
+    #a{
+        background-color:rgb(255, 255, 129) ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+    }
+    #b{
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+    }
+    #c{
+        background-color: rgb(83, 173, 251);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+        
+    }
+    #d{
+        background-color: rgb(250, 96, 199);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+    }
+    #e{
+        background-color: rgb(255, 167, 105);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+    }
+    #f{
+        background-color: rgb(221, 120, 249);
+        font-family:'Franklin Gothic';
+        font-size: 4em;
+        padding-top: 62%;
+        padding-bottom: 62%;
+    }
+    #card{
+        display: flex;
+        
+
+    }
+    #box1{
+        width: 60%;
+        
+    }
+    #box2{
+        width: 39%;
+        align-self: stretch;
+    }
+    section{
+        display: flex;
+        align-items:flex-start;
+        
+    }
+
 }
