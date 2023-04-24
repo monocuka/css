@@ -2,4 +2,6 @@ const convertAgeToSeconds = (age) => age * 365 * 24 * 60 * 60;
 
 const temCelsiusToFarenheit = (celsius) => (celsius * 1.8) + 32;
 
-export {convertAgeToSeconds, temCelsiusToFarenheit};
+const getProfits = (earnings, costs, taxes) => (earnings - costs) * ((100-taxes)/100);
+
+export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits};
