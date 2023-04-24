@@ -11,16 +11,13 @@
         
         let edad = prompt("cual es su edad");
 
-        let edadDias = edad * 365;
+        const convertirAniosSegundos = (edad) =>{
+            
+            let edadSegundos = edad*365*24*60*60;
+            return edadSegundos;
+        }
 
-        let edadEnH = edadDias * 24;
-
-        let edadMinutos = edadEnH * 60;
-
-        let edadSegundos = edadMinutos * 60;
-        
-        document.write(edadSegundos);
-
+        document.write(convertirAniosSegundos(edad)); 
     </script>
     
 </body>
