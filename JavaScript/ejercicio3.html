@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Earnings and cost </title>
+</head>
+<body>
+    <h1>Escriba sus ingresos y costos</h1>
+    <form action="">
+        Ingresos
+        <input id="earning" type="number" name="earning">
+        Gastos
+        <input id="cost" type="number" name="cost">
+        Impuesto (en  porcentaje)
+        <input id="taxes" type="number" name="taxes">
+        <button id="btn-calc">Calcular</button>
+    </form>
+
+    <div id="result"></div>
+</body>
+<script type="module">
+    import { getProfits } from './functions.js' ;
+
+    const btnCalc = document.getElementById("btn-calc")
+    const inputEarning = document.getElementById("earning")
+    const inputCost = document.getElementById("cost")
+    const inputTaxes = document.getElementById("taxes")
+    btnCalc.addEventListener("click", function(event) {
+    event.preventDefault(); // prevenir que el formulario se envíe
+
+        // Leer el valor del primer input
+        const earningValue = inputEarning.value;
+        //leer el valor del segundo input
+        const costValue = inputCost.value;
+        //leer el porcentaje
+        const taxesValue = inputTaxes.value
+        // Hacer lo que quieras con el valor leído (por ejemplo, mostrarlo en la consola)
+        const result = getProfits(earningValue, costValue, taxesValue)
+        document.getElementById('result').innerHTML = `la ganancia final es: $ ${result}`;
+        
+});
+
+
+</script>
+
+</html>
