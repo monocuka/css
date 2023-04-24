@@ -7,14 +7,14 @@
     <title>Edad en Segundos</title>
 </head>
 <body>
-    <script>
-        
-        let edad = prompt("cual es su edad");
-
-        const convertirAniosSegundos = (edad) => edad*365*24*60*60;
-        
-        document.write(convertirAniosSegundos(edad)); 
-    </script>
-    
+    <di id="root"></di>
 </body>
+
+<script type="module">
+    import {convertAgeToSeconds} from './functions.js' ;
+
+    let age = prompt("cual es su edad");
+
+    document.getElementById('root').innerHTML = convertAgeToSeconds(age);
+</script>
 </html>
