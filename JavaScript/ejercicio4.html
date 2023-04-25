@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciales en Mayuscula</title>
+</head>
+<body>
+    <h1>Dime tu nombre y Apellido</h1>
+    <form action="">
+        Nombre
+        <input type="text" name="name" id="name">
+        <button id="btn-name">Enviar</button>
+    </form>
+    <div id="initial"></div>
+    
+</body>
+<script type="module">
+    import { firstLetter } from './functions.js' ;
+    const firstName = document.getElementById("name");
+    const btnName = document.getElementById("btn-name");
+    btnName.addEventListener("click", function(event) {
+    event.preventDefault(); // prevenir que el formulario se envíe
+
+        const firstNameValue = firstName.value;
+        
+        document.getElementById('initial').innerHTML = `su primer letras es: ${firstLetter(firstNameValue)}`;
+        
+        
+});
+</script>
+</html>

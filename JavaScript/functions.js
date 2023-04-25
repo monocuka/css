@@ -4,4 +4,7 @@ const temCelsiusToFarenheit = (celsius) => (celsius * 1.8) + 32;
 
 const getProfits = (earnings, costs, taxes) => (earnings - costs) * ((100-taxes)/100);
 
-export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits};
+const firstLetter =(FisrtName) => FisrtName.charAt(0);    
+
+
+export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter};
