@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de ajedrez</title>
+</head>
+<body>
+    <h1>Tablero de Ajedrez</h1>
+</body>
+<script>
+// tamaño cuadricula
+let size = 8;
+
+//crear cuadrícula
+
+let cuadricula = '';
+
+for (let row = 1; row <= size; row++){ //con esta creamos las filas
+    for(let column = 1; column <= size; column++){ //con esta creamos las cloumnas
+        if((column + row ) % 2 === 0){ //aca le decimos que si columna y fila sumadas  y divididas por 2 da 0 no de un espacio 
+            cuadricula += '[ ]';
+        }else {
+            cuadricula += '[#]';// sino se cumple entonces un numeral 
+        }
+    }
+    cuadricula += '<br>'; // da un  enter entre filas. 
+    
+}
+    document.write(cuadricula);
+</script>
+</html>
