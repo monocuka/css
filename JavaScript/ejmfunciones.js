@@ -10,30 +10,37 @@ console.log(multiply(36325, sum));
 //funciones para hacer un menu
 
 const menu = (plato) =>{
+    let response = "tengo hamburguesa";
     if (plato === "ceviche") {
-        return "si hay ceviche";
+        response = "si hay ceviche";
     }else if (plato === "Tacos al pastor"){
-        return "si hay tacos"
+        response = "si hay tacos"
     }else if (plato === "empanadas"){
-        return "si hay empanadas"
-    }else {
-        return "tengo hamburguesa"
+        response = "si hay empanadas"
     }
+
+    return response;
 }
-// console.log(menu("Tacos al pastor"));
+//console.log(menu("Tacos al pastor"));
 
 //menu hecho con switch case.
 
 const menu2 = (plato) => {
+    let response = "";
     switch (plato) {
         case "ceviche" :
-            return "Si hay ceviche";
+            response = "Si hay ceviche";
+            break;
         case "Tacos al pastor":
-            return "Si hay tacos"
+            response = "Si hay tacos"
+            break;
         case "empanadas":
-            return "Si hay empanadas"
+            response = "Si hay empanadas"
+            break;
         default:
-            return "Hay hamburguesa"
+            response = "Hay hamburguesa"
+            break;
     }
+    return response;
 }
-console.log(menu2("Tacos al pastor"));
+//console.log(menu2("Tacos al pastor"));
