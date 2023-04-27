@@ -44,3 +44,27 @@ const menu2 = (plato) => {
     return response;
 }
 //console.log(menu2("Tacos al pastor"));
+
+
+
+const ageStage = (age) => {
+
+    let stage = "";
+
+    if (age >= 1 &&  age <= 3) {
+        stage = "Toddler";   
+    }else if (age > 3 && age <= 5){
+        stage = "Preschool";
+    }else if (age > 5 && age <= 12){
+        stage = "Gradeschooler";
+    }else if (age > 12 && age <= 18){
+        stage = "Teen";
+    }else if (age > 18 && age <= 21){
+        stage = "Young Adult"
+    }
+    return stage;
+
+}
+
+let age = parseInt(prompt("que edad tienes en años?")) ;
+console.log(ageStage(age))
