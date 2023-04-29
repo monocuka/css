@@ -5,7 +5,7 @@ const add = (a, b) =>  a + b;
 //Funcion para multiplicar dos numeros
 
 const multiply = (c, d) => c * d;
-console.log(multiply(36325, sum));
+//console.log(multiply(36325, sum));
 
 //funciones para hacer un menu
 
@@ -21,7 +21,7 @@ const menu = (plato) =>{
 
     return response;
 }
-//console.log(menu("Tacos al pastor"));
+console.log(menu("empanadas"));
 
 //menu hecho con switch case.
 
@@ -66,5 +66,10 @@ const ageStage = (age) => {
 
 }
 
-let age = parseInt(prompt("que edad tienes en años?")) ;
-console.log(ageStage(age))
+//let age = prompt("que edad tienes en años?") ;
+const age = 12;
+if (typeof(age) === "number"){
+    console.log(ageStage(14))
+}else {
+    console.log("esto no es un numero");
+}
