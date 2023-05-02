@@ -13,14 +13,52 @@
     <div id="count"></div>
 </body>
 <script type="module">
-    import { firstLetter } from './functions.js' ;
+    //import { firstLetter } from './functions.js' ;
 
     let phrase = prompt("escriba algo ").toUpperCase();
-    let guardado = phrase;
-    let strPhrase = phrase.split('');
+    let arrPhrase = phrase.split('');
+
+    // 1. imprimir caracteres
+    // version imperativa
+    let phraseString = "";
+    for(let i=0; i<arrPhrase.length; i++){
+        phraseString = phraseString + arrPhrase[i]+ "<br/>";
+    }
+
+    // version declarativa
+    let phraseString2 = arrPhrase.map(letter => letter + "<br/>")
+
+    document.getElementById('count').innerHTML = `su frase es :<br /> ${phraseString2}`;
+
+    //2. contar caracteres
+    let count = 0;
+    let tempString = phrase;
+
+    while(tempString !== ""){
+        tempString = tempString.slice(1);
+        count++;
+    }
+
+    console.log(count);
     
-    document.getElementById('count').innerHTML = `su frase es: ${strPhrase}`;
-    
+
+    // 3. contar espacios: 
+    // opcion imperativa
+    count = 0;
+    for(let i = 0; i < phrase.length; i++){
+        if(phrase[i] == " "){
+            count++;
+        };
+    }
+
+    //opcion declarativa
+    const spaces = arrPhrase.filter(el => el == " ");
+
+    console.log(spaces.length);
+    console.log(count);
+
+
+
 
 </script>
 </html>
