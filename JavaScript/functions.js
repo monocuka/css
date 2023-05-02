@@ -9,5 +9,4 @@ const firstLetter =(FisrtName) => FisrtName.charAt(0).toUpperCase();
 
 
 
-
-export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter, characters};
+export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter};
