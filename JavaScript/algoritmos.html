@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>Ejercicios de Algoritmos</h1>
+    <h2>Exercise 2</h2>
+    <div id="exercise2"></div>
+
+
 </body>
 <script>
     //algoritmo para saber si un numero es par 
@@ -19,6 +23,11 @@
             return "numero impar";
         }
     }
-    document.write(numero_par(30));
+
+    const exercise2Div = document.getElementById("exercise2");
+    exercise2Div.innerHTML = numero_par(30);
+
+    // algoritomo para recibir un numero de dos digitos y sumar sus digitos
+
 </script>
 </html>
