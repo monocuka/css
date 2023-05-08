@@ -10,12 +10,14 @@
     <h1>Ejercicios de Algoritmos</h1>
     <h2>Exercise 2</h2>
     <div id="exercise2"></div>
+    <h2>Exercise 4</h2>
+    <div id="sumOdd"></div>
 
 
 </body>
 <script>
     //algoritmo para saber si un numero es par 
-    const numero_par = (num) => {
+    const odd_number = (num) => {
         
         if (parseInt(num / 2) * 2 === num){
             return "numero es par";
@@ -25,9 +27,23 @@
     }
 
     const exercise2Div = document.getElementById("exercise2");
-    exercise2Div.innerHTML = numero_par(30);
+    exercise2Div.innerHTML = odd_number(30);
 
     // algoritomo para recibir un numero de dos digitos y sumar sus digitos
+    const countDigits = (num) => {
+        if (num < 0){
+            num = num * (-1);
+        }
+        if (num >=10 && num <= 99){
+            num1 = parseInt(num / 10);
+            num2 = num % 10;
 
+            return num1 + num2;
+        }else {
+            return "No es un numero de dos digitos "
+        }
+    }
+    const result = document.getElementById("sumOdd");
+    result.innerHTML = countDigits(56)
 </script>
 </html>
