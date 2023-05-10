@@ -14,7 +14,10 @@
     <div id="sumOdd"></div>
     <h2>Exercise6</h2>
     <div id="primeNumber"></div>
-
+    <h2>exercise13</h2>
+    <div id="peerNumber"></div>
+    <h2>exercise15</h2>
+    <div id="number3"></div>
 </body>
 <script>
     //algoritmo para saber si un numero es par 
@@ -67,5 +70,46 @@
     const equilito = document.getElementById("primeNumber");
     equilito.innerHTML = equalsNumber(44);
     
+    //Leer dos números enteros de dos dígitos y determinar si la suma de los dos números origina un numero par.
+    const numbers_Peers = (num1, num2) => {
+        if (num1 < 0 && num2 < 0) {
+            num1 = num1 * -1;
+            num2 = num2 * -1;    
+        }
+        if (num1 < 10 || num1 > 99 && num2 < 10 || num2 > 99 ) {
+        return "los numeros  no son validos, por favor digite dos numeros enteros de dos digitos"            
+        }
+        let suma = num1 + num2;
+
+        if (suma % 2 === 0) {
+            return ` El resultado de la suma es: ${suma} y si es un numero par`
+        }
+        return"El resultado no es un numero par "
+    }
+
+    const result_peer = document.getElementById("peerNumber");
+    result_peer.innerHTML = numbers_Peers(35, 50);
+    
+    //Leer un número entero de tres dígitos y determinar a cuánto es igual la suma de sus dígitos.
+    const reedNumber = (N) => {
+        if (N < 0) {
+            N = N * -1
+        }
+        if (N < 100 || N > 999) {
+            return "Ingrese un numero de 3 digitos"
+        }
+        n1 = parseInt(N / 10); // me guarda primeros dos numeros de 3 
+        n2 = N % 10; // este me guarda el ultimo numero 
+        n3 = parseInt(n1 / 10) // me guarda el primer numero
+        n4 = n1 % 10;
+
+        let sum = n2 +n3 + n4;
+
+        return ` ${sum} este es el resultado de la suma de 3 digitos de un numero entero`
+        }   
+
+    const resulting = document.getElementById("number3");
+    resulting.innerHTML = reedNumber(354);
+
 </script>
 </html>
