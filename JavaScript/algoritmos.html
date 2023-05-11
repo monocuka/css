@@ -18,6 +18,9 @@
     <div id="peerNumber"></div>
     <h2>exercise15</h2>
     <div id="number3"></div>
+    <h2>Exercises24</h2>
+    <div id="Exercises24"></div>
+
 </body>
 <script>
     //algoritmo para saber si un numero es par 
@@ -98,10 +101,10 @@
         if (N < 100 || N > 999) {
             return "Ingrese un numero de 3 digitos"
         }
-        n1 = parseInt(N / 10); // me guarda primeros dos numeros de 3 
+        n1 = parseInt(N / 10); // me guarda los primeros DOS numeros de 3.
         n2 = N % 10; // este me guarda el ultimo numero 
         n3 = parseInt(n1 / 10) // me guarda el primer numero
-        n4 = n1 % 10;
+        n4 = n1 % 10; //me guarda el segundo numero
 
         let sum = n2 +n3 + n4;
 
@@ -110,6 +113,37 @@
 
     const resulting = document.getElementById("number3");
     resulting.innerHTML = reedNumber(354);
+
+    //24. Leer un número entero de tres dígitos y determinar cuántos dígitos pares tiene.
+    
+    const treeDigits = (num) => {
+        if (num < 0) {
+            num = num * -1;
+        }
+        if (num < 100 || num > 999) {
+            return "ingrese un numero de 3 digitos"
+        }
+        const numberFull = parseInt(num / 10);// 
+        const thirdDigit = num % 10;
+        const firstDigit = parseInt(numberFull /10);
+        const secondDigit = numberFull % 10;
+
+        let count = 0;
+
+        if (thirdDigit % 2 === 0){
+            count ++;
+        }
+        if (secondDigit % 2 === 0) {
+            count++;
+        } 
+        if ( firstDigit % 2 === 0 ){
+            count++;
+        }
+        return `los digitos par en est numero son ${count} `
+    }
+
+    const resultree = document.getElementById("Exercises24");
+    resultree.innerHTML = treeDigits(777)
 
 </script>
 </html>
