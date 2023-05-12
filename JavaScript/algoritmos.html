@@ -20,7 +20,10 @@
     <div id="number3"></div>
     <h2>Exercises24</h2>
     <div id="Exercises24"></div>
-
+    <h2>Exercises30</h2>
+    <div id="Exercises30"></div>
+    <h2>Exercises44</h2>
+    <div id="Exercises44"></div>
 </body>
 <script>
     //algoritmo para saber si un numero es par 
@@ -144,6 +147,58 @@
 
     const resultree = document.getElementById("Exercises24");
     resultree.innerHTML = treeDigits(777)
+
+    //30. Leer un número entero de cuatro dígitos y determinar si el segundo dígito es igual al penúltimo.
+const numbers_equal = (number) => {
+    if (number < 0) {
+        number = number * -1;
+    }
+    if (number < 1000 || number > 9999 ) {
+        return "ingrese un numero de 4 digitos"
+    }
+    const numberComplete = parseInt(number / 10);// me saca las primeras 3 digitos
+    const lastNumber = number % 10; // me saca el ultimo 4to digito
+    const numberT = parseInt(numberComplete / 10);//cojo los 3 digitos y lo vuelvo 2 digitos
+    const number2 = parseInt(numberT / 10);//cojo 2 digitos y me da el primer digito 
+    const number3 = numberComplete % 10;//este me da el tercer digito
+    const number4 = numberT % 10;// me saca el segundo digito
+
+
+    if (number4 === number3) {
+        return "El segundo y penultimo numero son igual "
+    }else{
+        return "los digitos del medio no son iguales"
+    }
+}
+const resultEquals = document.getElementById("Exercises30");
+resultEquals.innerHTML = numbers_equal(-133);
+
+//45. Leer un número entero de 2 dígitos y si es par mostrar en pantalla la suma de sus dígitos, si es primo y menor que 10 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 30 mostrar en pantalla el primer dígito.
+
+const exercise44 = (number) => {
+    if (number < 0) {
+        number = number * -1;
+    }
+    if (number < 10 || number > 99 ) {
+        return "No es de dos digitos el numero ingresado"
+    }
+    if (number % 2 === 0) {
+        number1 = parseInt(number / 10);
+        number2 = number % 10;
+        let sum = number1 + number2;
+        return `este numero es par ${number} , y la suma de sus digitos es ${sum} `;
+    }
+    for (let i = 0; i < number ; i++) {
+        if (number % i === 0) {
+            return `${number} es primo `
+        } 
+        }
+    
+}
+    
+const  numberPrime = document.getElementById("Exercises44");
+numberPrime.innerHTML = exercise44();
+
 
 </script>
 </html>
