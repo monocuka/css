@@ -173,31 +173,41 @@ const numbers_equal = (number) => {
 const resultEquals = document.getElementById("Exercises30");
 resultEquals.innerHTML = numbers_equal(-133);
 
-//45. Leer un número entero de 2 dígitos y si es par mostrar en pantalla la suma de sus dígitos, si es primo y menor que 10 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 30 mostrar en pantalla el primer dígito.
+//45. Leer un número entero de 2 dígitos y si es par mostrar en pantalla la suma de sus dígitos, si es primo y menor que 20 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 100 mostrar en pantalla el primer dígito.
 
-const exercise44 = (number) => {
-    if (number < 0) {
-        number = number * -1;
+const exercise44 = (numbe) => {
+    // check if is negative
+    if (numbe < 0) {
+        numbe = numbe * -1;
     }
-    if (number < 10 || number > 99 ) {
+    // check if is 2 digit number
+    if (numbe < 10 || numbe > 99 ) {
         return "No es de dos digitos el numero ingresado"
     }
-    if (number % 2 === 0) {
-        number1 = parseInt(number / 10);
-        number2 = number % 10;
+    // check if is pair number
+    if (numbe % 2 === 0) {
+        number1 = parseInt(numbe / 10);
+        number2 = numbe % 10;
         let sum = number1 + number2;
-        return `este numero es par ${number} , y la suma de sus digitos es ${sum} `;
+        return `este numero es par ${numbe} , y la suma de sus digitos es ${sum} `;
     }
-    for (let i = 0; i < number ; i++) {
-        if (number % i === 0) {
-            return `${number} es primo `
-        } 
+
+    // check if is prime number
+    let count = 0;
+        for (let i = 2; i < numbe ; i++) {
+            if (!numbe % i === 0 && numbe < 20) {
+                numFinal = numbe % 10; 
+                return `el número ${numbe} es primo y su ultimo digito es ${numFinal}`;
+            }else if (numbe % 5 === 0 && numbe < 100){
+                numberito = parseInt(numbe / 10);
+                return `el numero ${ numbe} es multiplo de 5 y su primer digito es ${numberito} `
+            }else {
+            return "no es multiplo"
+            }  
         }
-    
-}
-    
+}  
 const  numberPrime = document.getElementById("Exercises44");
-numberPrime.innerHTML = exercise44();
+numberPrime.innerHTML = exercise44(17);
 
 
 </script>
