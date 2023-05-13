@@ -20,7 +20,14 @@
     <div id="number3"></div>
     <h2>Exercises24</h2>
     <div id="Exercises24"></div>
-
+    <h2>Exercises30</h2>
+    <div id="Exercises30"></div>
+    <h2>Exercises44</h2>
+    <div id="Exercises44"></div>
+    <h2>Exercises38</h2>
+    <div id="Exercises38"></div>
+    <h2>Exercises48</h2>
+    <div id="Exercises48"></div>
 </body>
 <script>
     //algoritmo para saber si un numero es par 
@@ -61,12 +68,12 @@
             n1 = parseInt(n / 10);
             n2 = n % 10;
         }else{
-            return "su numero no es de dos digitos"
+            return "su numero no es de dos digitos";
         }
         if(n1 === n2){
-            return "sus dos numeros son iguales"
+            return "sus dos numeros son iguales";
         }else {
-            return "numeros no son iguales "
+            return "numeros no son iguales ";
         }
     } 
 
@@ -80,14 +87,14 @@
             num2 = num2 * -1;    
         }
         if (num1 < 10 || num1 > 99 && num2 < 10 || num2 > 99 ) {
-        return "los numeros  no son validos, por favor digite dos numeros enteros de dos digitos"            
+        return "los numeros  no son validos, por favor digite dos numeros enteros de dos digitos";      
         }
         let suma = num1 + num2;
 
         if (suma % 2 === 0) {
-            return ` El resultado de la suma es: ${suma} y si es un numero par`
+            return ` El resultado de la suma es: ${suma} y si es un numero par`;
         }
-        return"El resultado no es un numero par "
+        return"El resultado no es un numero par ";
     }
 
     const result_peer = document.getElementById("peerNumber");
@@ -96,19 +103,19 @@
     //Leer un número entero de tres dígitos y determinar a cuánto es igual la suma de sus dígitos.
     const reedNumber = (N) => {
         if (N < 0) {
-            N = N * -1
+            N = N * -1;
         }
         if (N < 100 || N > 999) {
-            return "Ingrese un numero de 3 digitos"
+            return "Ingrese un numero de 3 digitos";
         }
         n1 = parseInt(N / 10); // me guarda los primeros DOS numeros de 3.
         n2 = N % 10; // este me guarda el ultimo numero 
-        n3 = parseInt(n1 / 10) // me guarda el primer numero
+        n3 = parseInt(n1 / 10);// me guarda el primer numero
         n4 = n1 % 10; //me guarda el segundo numero
 
         let sum = n2 +n3 + n4;
 
-        return ` ${sum} este es el resultado de la suma de 3 digitos de un numero entero`
+        return ` ${sum} este es el resultado de la suma de 3 digitos de un numero entero`;
         }   
 
     const resulting = document.getElementById("number3");
@@ -139,11 +146,111 @@
         if ( firstDigit % 2 === 0 ){
             count++;
         }
-        return `los digitos par en est numero son ${count} `
+        return `los digitos par en est numero son ${count} `;
     }
 
     const resultree = document.getElementById("Exercises24");
     resultree.innerHTML = treeDigits(777)
 
+    //30. Leer un número entero de cuatro dígitos y determinar si el segundo dígito es igual al penúltimo.
+const numbers_equal = (number) => {
+    if (number < 0) {
+        number = number * -1;
+    }
+    if (number < 1000 || number > 9999 ) {
+        return "ingrese un numero de 4 digitos";
+    }
+    const numberComplete = parseInt(number / 10);// me saca las primeras 3 digitos
+    const lastNumber = number % 10; // me saca el ultimo 4to digito
+    const numberT = parseInt(numberComplete / 10);//cojo los 3 digitos y lo vuelvo 2 digitos
+    const number2 = parseInt(numberT / 10);//cojo 2 digitos y me da el primer digito 
+    const number3 = numberComplete % 10;//este me da el tercer digito
+    const number4 = numberT % 10;// me saca el segundo digito
+
+
+    if (number4 === number3) {
+        return "El segundo y penultimo numero son igual ";
+    }else{
+        return "los digitos del medio no son iguales";
+    }
+}
+const resultEquals = document.getElementById("Exercises30");
+resultEquals.innerHTML = numbers_equal(-133);
+
+//45. Leer un número entero de 2 dígitos y si es par mostrar en pantalla la suma de sus dígitos, si es primo y menor que 20 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 100 mostrar en pantalla el primer dígito.
+
+const exercise44 = (numbe) => {
+    // check if is negative
+    if (numbe < 0) {
+        numbe = numbe * -1;
+    }
+    // check if is 2 digit number
+    if (numbe < 10 || numbe > 99 ) {
+        return "No es de dos digitos el numero ingresado";
+    }
+    // check if is pair number
+    if (numbe % 2 === 0) {
+        number1 = parseInt(numbe / 10);
+        number2 = numbe % 10;
+        let sum = number1 + number2;
+        return `este numero es par ${numbe} , y la suma de sus digitos es ${sum} `;
+    }
+
+    // check if is prime number
+    let count = 0;
+        for (let i = 2; i < numbe ; i++) {
+            if (!numbe % i === 0 && numbe < 20) {
+                numFinal = numbe % 10; 
+                return `el número ${numbe} es primo y su ultimo digito es ${numFinal}`;
+            }else if (numbe % 5 === 0 && numbe < 100){
+                numberito = parseInt(numbe / 10);
+                return `el numero ${ numbe} es multiplo de 5 y su primer digito es ${numberito} `;
+            }else {
+            return "no es multiplo";
+            }  
+        }
+}  
+const  numberPrime = document.getElementById("Exercises44");
+numberPrime.innerHTML = exercise44(17);
+//38. Leer tres números enteros y determinar si el último dígito de los tres números es igual.
+const exercise_Equals = (num1, num2, num3) =>{
+    // check if is negative
+    if (num1 < 0 && num2 < 0 && num3 < 0) {
+        num1 = num1 * -1;
+        num2 = num2 * -1;
+        num3 = num3 * -1;
+    }
+    // check if is 2 digit number
+    if (num1 < 10 || num1 > 99 && num2 < 10 || num2 > 99 && num3 < 10 || num3 > 99 ) {
+        return "No es de dos digitos el numero ingresado"
+    }
+    finalDigit1 = num1 % 10; // take the last digit of the first number.
+    finalDigit2 = num2 % 10; 
+    finalDigit3 = num3 % 10;
+    if (finalDigit1 === finalDigit2 && finalDigit2 === finalDigit3) {
+        return `los ultimos digitos  del primer ${finalDigit1}, segundo ${finalDigit2}, tercer ${finalDigit3} son iguales`
+    }
+        return"no son iguales los ultimos digitos"
+}
+const  numberEq = document.getElementById("Exercises38");
+numberEq.innerHTML = exercise_Equals(-19 , -39, -59);
+
+//Leer un número entero y si es menor que 100 determinar si es primo.
+
+const theNumerIsPrime = (theNumber) => {
+    if (theNumber < 0) {
+        theNumber = theNumber * -1;
+    }
+    if (theNumber < 100) {
+        for (let i = 2; i < theNumber; i++) {
+            if (theNumber % i === 0) {
+                return ` El numero ${theNumber}  no es primo `;
+            }
+        }
+        return "El numero es primo ";
+    }
+}
+const  primeNum = document.getElementById("Exercises48");
+primeNum.innerHTML = theNumerIsPrime(17);
 </script>
 </html>
