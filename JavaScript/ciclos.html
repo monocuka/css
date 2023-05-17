@@ -10,10 +10,23 @@
     <h1>Loops</h1>
     <h2>Exercise 1</h2>
     <div id="exer1"></div>
+    <h2>Exercise 2</h2>
+    <div id="exer2"></div>
+    <h2>Exercise 4</h2>
+    <div id="exer4"></div>
+    <h2>Exercise 5</h2>
+    <div id="exer5"></div>
+    <h2>Exercise 8</h2>
+    <div id="exer8"></div>
+    <h2>Exercise 10</h2>
+    <div id="exer10"></div>
+    <h2>Exercise 12</h2>
+    <div id="exer12"></div>
     
 </body>
 <script>
-    const exers1 = (num) => {
+//1. Leer un número entero y mostrar todos los enteros comprendidos entre 1 y el número leído.    
+    const exerc1 = (num) => {
         if (num < 0) { 
             num = num * -1;
         }
@@ -28,8 +41,122 @@
         return count;
     }
     const  result = document.getElementById("exer1");
-    result.innerHTML = exers1(200);
+    result.innerHTML = exerc1(20);
 
-    
-</script>
+//2. Leer un número entero y mostrar todos los pares comprendidos entre 1 y el número leído.
+    const exerc2 = (num) => {
+            if (num < 0) { 
+                num = num * -1;
+            }
+            if (num % 1 !== 0) {
+                return `${num} No es numero entero`;
+            } 
+
+            let count = [];
+            for (let i = 1; i <= num; i++) {
+                if (i % 2 === 0) {
+                    count.push(i);
+                }
+            }
+            return count;
+        }
+        const  resultTwo = document.getElementById("exer2");
+        resultTwo.innerHTML = exerc2(20);
+
+//4. Leer dos números y mostrar todos los enteros comprendidos entre ellos.
+    const exerc4 = (numOne, numTwo) => {
+        if (numOne >= numTwo) { 
+                return "ingrese numero uno mayor que numero 2";
+            }
+        if (numOne % 1 !== 0 || numTwo % 1 !== 0) {
+            return "Ingrese un numero entero";
+        }
+
+        let counter =[];      
+        for (let i = numOne; i < numTwo ; i++) {
+                counter.push(i)
+        }    
+        return counter;
+    }
+
+        const  resultFour = document.getElementById("exer4");
+        resultFour.innerHTML = exerc4(20, 60);
+
+//5. Leer dos números y mostrar todos los números terminados en 4 comprendidos entre ellos.
+const exerc5 = (numberOne, numberTwo) => {
+    if (numberOne >= numberTwo) {
+        return "Ingrese el numero 1 mayor que el numero 2 ";
+    }
+    if (numberOne % 1 !== 0 || numberTwo % 1 !== 0) {
+        return "ingrese numero enteros";
+    }
+    let count =[];
+    for (let i = numberOne; i < numberTwo; i++) {
+        let finalDigit = i % 10;
+        if (finalDigit === 4 ) {
+            count.push(i);
+        } 
+    }
+    return count;
+}
+        const  resultFive = document.getElementById("exer5");
+        resultFive.innerHTML = exerc5(20, 60);
+
+//8. Mostrar en pantalla todos los pares comprendidos entre 20 y 200.
+const exerc8 = (num1, num2) => {
+
+    let count = [];
+    for (let i = 20; i < 200; i++) {
+        if (i % 2 === 0) {
+            count.push(i)
+        }
+    }
+    return count
+}
+        const  resultEight = document.getElementById("exer8");
+        resultEight.innerHTML = exerc8();
+
+//10. Leer un número entero y determinar a cuánto es igual la suma de todos los enteros comprendidos entre 1 y el número leído.
+
+const exerc10  = (theNumber) => {
+    if (theNumber % 1 !== 0) {
+        return "Ingrese un numero entero "
+    }
+    let sum = 0;
+    for (let i = 1; i <= theNumber; i++) {
+        sum = sum + i;
+        
+    }
+    return `La suma de los numero entre 1 y el numero es ${sum} `
+}
+        const  resultTen = document.getElementById("exer10");
+        resultTen.innerHTML = exerc10(6);
+//12. Leer un número entero de 3 dígitos y determinar si tiene el dígito 1.
+
+const exerc12 = (numDigits) => {
+    if (numDigits < 0) {
+        numDigits = numDigits * -1;
+    }
+    if (numDigits % 1 !== 0) {
+        return "Ingrese un numero entero "
+    }
+    if (numDigits >= 100 || numDigits <= 999) {
+        
+    }
+    let digitFull = parseInt(numDigits / 10);
+    let digitFinal = numDigits % 10 ; // ultimo digito
+    let oneDigit = parseInt(digitFull / 10); //Primer digito
+    let secondDigit = digitFull % 10; //segundo digito 
+
+    if (oneDigit === 1 || secondDigit === 1 || digitFinal === 1) {
+        return `el numero si tiene el digito uno `
+    }
+    return "no tiene el digito 1 "
+}
+        const  resultTwelve = document.getElementById("exer12");
+        resultTwelve.innerHTML = exerc12(212);
+
+//
+
+    </script>
 </html>
