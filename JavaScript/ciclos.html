@@ -22,7 +22,10 @@
     <div id="exer10"></div>
     <h2>Exercise 12</h2>
     <div id="exer12"></div>
-    
+    <h2>Exercise 13</h2>
+    <div id="exer13"></div>
+    <h2>Exercise 17</h2>
+    <div id="exer17"></div>
 </body>
 <script>
 //1. Leer un número entero y mostrar todos los enteros comprendidos entre 1 y el número leído.    
@@ -138,7 +141,7 @@ const exerc12 = (numDigits) => {
         numDigits = numDigits * -1;
     }
     if (numDigits % 1 !== 0) {
-        return "Ingrese un numero entero "
+        return "Ingrese un numero entero ";
     }
     if (numDigits >= 100 || numDigits <= 999) {
         
@@ -149,14 +152,58 @@ const exerc12 = (numDigits) => {
     let secondDigit = digitFull % 10; //segundo digito 
 
     if (oneDigit === 1 || secondDigit === 1 || digitFinal === 1) {
-        return `el numero si tiene el digito uno `
+        return "el numero si tiene el digito uno";
     }
-    return "no tiene el digito 1 "
+    return "no tiene el digito 1 ";
 }
         const  resultTwelve = document.getElementById("exer12");
         resultTwelve.innerHTML = exerc12(212);
 
-//
+//13. Leer un entero y mostrar todos los múltiplos de 5 comprendidos entre 1 y el número leído.
 
+const exerc13 = (theNumber) => {
+    if (theNumber < 0) {
+        theNumber = theNumber * -1;
+    }
+    if (theNumber % 1 !== 0) {
+        return "Ingrese un numero entero";
+    }
+    let counter = [];
+    for (let i = 1 ; i < theNumber; i++){
+        if(i % 5 === 0){
+            counter.push(i);
+        }
+    }
+    return `los multiplos de 5 son ${counter}`;
+}
+        const  resultThirteen = document.getElementById("exer13");
+        resultThirteen.innerHTML = exerc13(20);
+
+//Promediar los X primeros múltiplos de 2 y determinar si ese promedio es mayor que los Y primeros múltiplos de 5 para valores de x y y leídos.
+
+const exerc17 = (x,y) => {
+    let sumX = 0;
+    let sumY = 0;
+    const finX = x * 2;
+    const finY = y * 5;
+    for (let i = 1; i <= finX; i++) {
+        if (i % 2 === 0) {
+            sumX = sumX + i;
+        }
+    }
+    for (let i = 1; i <= finY; i++) {
+        if(i % 5 === 0){
+            sumY = sumY + i;
+        }
+    }
+    let promX = sumX / x;
+    let promY = sumY / y;
+    if (promX > promY) {
+        return `el promedio de x es ${promX} y el promedio de Y es ${promY}`;
+    }
+    return "Pomedio de Y no es mayor que promedio X";
+}
+        const  resultSeventeen = document.getElementById("exer17");
+        resultSeventeen.innerHTML = exerc17(100, 20);
     </script>
 </html>
