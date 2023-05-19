@@ -26,6 +26,8 @@
     <div id="exer13"></div>
     <h2>Exercise 17</h2>
     <div id="exer17"></div>
+    <h2>Exercise Final</h2>
+    <div id="exerFinal"></div>
 </body>
 <script>
 //1. Leer un número entero y mostrar todos los enteros comprendidos entre 1 y el número leído.    
@@ -205,5 +207,21 @@ const exerc17 = (x,y) => {
 }
         const  resultSeventeen = document.getElementById("exer17");
         resultSeventeen.innerHTML = exerc17(100, 20);
+//Leer un número entero y determinar cuántos dígitos tiene.
+
+const wholeNumberDigits = (number) => {
+    if (number < 0) {
+        return "ingrese un numero positivo";
+    }
+    if (number > 10 && number < 100 ) {
+        return"el numero es de dos digitos";
+    }
+        if (number > 100 && number < 999 ){
+        return "el numero tiene 3 Digitos";
+    } 
+        return " el numero tiene o un 1 digito o mas de 3 digitos";
+}  
+        const digitsNumber = document.getElementById("exerFinal");
+        digitsNumber.innerHTML = wholeNumberDigits(100)
     </script>
 </html>
