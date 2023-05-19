@@ -28,6 +28,10 @@
     <div id="exer17"></div>
     <h2>Exercise Final</h2>
     <div id="exerFinal"></div>
+    <h2>Exercise Fibonacci</h2>
+    <div id="exerFibo"></div>
+    <h2>Sum Fibonacci Numbers</h2>
+    <div id="fiboSum"></div>
 </body>
 <script>
 //1. Leer un número entero y mostrar todos los enteros comprendidos entre 1 y el número leído.    
@@ -223,5 +227,44 @@ const wholeNumberDigits = (number) => {
 }  
         const digitsNumber = document.getElementById("exerFinal");
         digitsNumber.innerHTML = wholeNumberDigits(100)
+//ejercicio fibonacci 
+const fibonacci = (theNumber) => {
+        let fiboNum = [0, 1]; // Inicializar la serie con los primeros dos números
+
+        if (theNumber <= 2) {
+        return fiboNum.slice(0, theNumber); // Devolver los primeros n números de Fibonacci
+        }
+
+        for (let i = 2; i < theNumber; i++) {
+            let nextNumber = fiboNum[i - 1] + fiboNum[i - 2]; //en esta operacion le decimos que coja el numero en el que esta y le reste 1 para tener el anterios y 2 para tener el segundo anterior ejemplo para 5 le resta a 5 2 y despues al resultado que es 3 le resta 1.
+            fiboNum.push(nextNumber);
+        }
+
+            return fiboNum;
+    }
+    const fibonacciNum = document.getElementById("exerFibo");
+    fibonacciNum.innerHTML = fibonacci(100);   
+
+//41. Determinar a cuánto es igual la suma de los elementos de la serie de Fibonacci entre 0 y 100.
+
+const sumFibonacciNum = () => {
+    let serieFib = [0,1];
+
+    
+    for(let i = 2; i <= 9  ; i++){
+        let numberNext = serieFib[i - 1] + serieFib[i - 2];
+        serieFib.push(numberNext);
+        
+    }
+    let counter = 0;
+    for (let i = 0; i < serieFib.length; i++) {
+        counter = counter + serieFib[i];
+    }
+    return counter;
+}
+
+
+    const resultFibo = document.getElementById("fiboSum");
+    resultFibo.innerHTML = sumFibonacciNum();  
     </script>
 </html>
