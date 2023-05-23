@@ -8,25 +8,38 @@
 </head>
 <body>
     <script>
-    function fibonacci(n) {
-    var fibNumbers = [0, 1]; // Inicializar la serie con los primeros dos números
-  
-    if (n <= 2) {
-      return fibNumbers.slice(0, n); // Devolver los primeros n números de Fibonacci
+
+    const isPrime = (number) => {
+      for(let i = 2; i < number; i++){
+        if(number % i === 0){
+          return false;
+        }
+      }
+      return true;
     }
-  
-    for (var i = 2; i < n; i++) {
-      var nextNumber = fibNumbers[i - 1] + fibNumbers[i - 2];
-      fibNumbers.push(nextNumber);
-    }
-  
-    return fibNumbers;
+
+
+    const exercise5 = () => {
+    
+      primeNumbers = [];
+      let count = 0;
+      for(let i = 100; i < 300; i++){
+        if(isPrime(i)){
+          count++;
+          primeNumbers.push(i);
+        }
+
+        if(count == 10){
+          break;
+        }
+      }
+
+
+      return primeNumbers;
+    
   }
-  
-  // Ejemplo de uso:
-  var n = 10; // Calcular los primeros 10 números de Fibonacci
-  var fibonacciNumbers = fibonacci(n);
-  console.log(fibonacciNumbers);
+
+  console.log(exercise5());
 
     </script>
 
