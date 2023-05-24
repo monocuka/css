@@ -8,11 +8,33 @@
 </head>
 <body>
     <h1>Arrays exercises</h1>
+    <h2>Exercises 1</h2>
+    <div id="arr1"></div>
     <h2>Exercises 2</h2>
     <div id="arr2"></div>
     
 </body>
 <script>
+//1. Leer 10 enteros, almacenarlos en un vector y determinar en qué posición del vector está el mayor número leído.
+        const exercise1 = () => {
+        let randomNumbers = [];
+        for (let i = 0; i < 10; i++) {
+        let theNumbers = Math.floor(Math.random()* 100);
+        randomNumbers.push(theNumbers);
+        }
+        let bigNumber = 0;
+        let positionBigNum = 1;
+        for (let i = 0; i < randomNumbers.length; i++) {
+            if (randomNumbers[i] > bigNumber) {
+                bigNumber = randomNumbers[i];
+                positionBigNum = i + 1;
+            } 
+        }
+        return `el numero mayor del array es ${bigNumber}, en la posicion ${positionBigNum}  y el array es ${randomNumbers} `;   
+    }
+    const result1 = document.getElementById("arr1");
+    result1.innerHTML = exercise1();
+
      // 2. Leer 10 enteros, almacenarlos en un vector y determinar en qué posición del vector está el
     //    mayor número par leído.
 
@@ -20,7 +42,7 @@
         const numbs = [];
 
         for (let i = 0; i < 10; i++) {
-            let number = parseInt(prompt("Ingrese un número entero: "));
+            //let number = parseInt(prompt("Ingrese un número entero: "));
             numbs.push(number);
         }
 
@@ -44,6 +66,9 @@
         }
     }
     const result = document.getElementById("arr2");
-    result.innerHTML = arrNumbers();
+    //result.innerHTML = arrNumbers();
+
+
+
 </script>
 </html>
