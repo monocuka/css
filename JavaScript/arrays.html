@@ -18,6 +18,8 @@
     <div id="arr10"></div>
     <h2>Exercises 12</h2>
     <div id="arr12"></div>
+    <h2>Exercises 21</h2>
+    <div id="arr21"></div>
     
 </body>
 <script>
@@ -155,6 +157,44 @@ const exercise12 = () => {
 
     const result12 = document.getElementById("arr12");
     result12.innerHTML = exercise12();
+
+//21. Leer 10 números enteros, almacenarlos en un vector y determinar en qué posición está el número cuya suma de dígitos sea la mayor.
+
+const exercise21 = () => {
+    const theRandomNum = [];
+
+    for (let i = 0; i < 10; i++) {
+        theRandomNum.push(Math.floor(Math.random() * 100));
+    }
+
+    let sumDigitArr = [];
+    let digitOne = 0;
+    let digitTwo = 0;
+    for (let i = 0; i < theRandomNum.length; i++) {
+        if (theRandomNum[i] > 9) {
+            digitOne = parseInt(theRandomNum[i] / 10);
+            digitTwo = theRandomNum[i] % 10 ;
+            let sum = digitOne + digitTwo; 
+            sumDigitArr.push(sum)
+        }    
+    }
+
+        let bigNum = 0;
+        let posBigNum = 1;
+
+        for (let i = 0; i < sumDigitArr.length; i++) {
+            if (sumDigitArr[i] > bigNum) {
+                bigNum = sumDigitArr[i];
+                posBigNum = i + 1;
+            } 
+        }
+        return `este es el array principal --- ${theRandomNum} esta es la suma     ${sumDigitArr} --- y el mayor al ser sumado es ${bigNum} ---y su posicion al sumarlos es ${posBigNum} `;
+}
+
+    const resultEx21 = document.getElementById("arr21");
+    resultEx21.innerHTML = exercise21();
+
+//23. Leer 10 números enteros, almacenarlos en un vector y determinar si existe al menos un número repetido.
 
 
 
