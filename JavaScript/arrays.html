@@ -12,6 +12,12 @@
     <div id="arr1"></div>
     <h2>Exercises 2</h2>
     <div id="arr2"></div>
+    <h2>Exercises 5</h2>
+    <div id="arr5"></div>
+    <h2>Exercises 10</h2>
+    <div id="arr10"></div>
+    <h2>Exercises 12</h2>
+    <div id="arr12"></div>
     
 </body>
 <script>
@@ -67,6 +73,88 @@
     }
     const result = document.getElementById("arr2");
     //result.innerHTML = arrNumbers();
+
+//ejercicio 5 
+
+const isPrime = (number) => {
+    for(let i = 2; i < number; i++){
+        if(number % i === 0){
+            return false;
+        }
+        }
+        return true;
+    }
+
+    const exercise5 = () => {
+    
+    primeNumbers = [];
+    let count = 0;
+    for(let i = 100; i < 300; i++){
+        if(isPrime(i)){
+        count++;
+        primeNumbers.push(i);
+        }
+
+        if(count == 10){
+        break;
+        }
+    }
+
+
+        return primeNumbers;
+        }
+
+        const result5 = document.getElementById("arr5");
+        result5.innerHTML = exercise5();
+//10. Leer 10 números enteros, almacenarlos en un vector y determinar en qué posiciones se encuentran los números con mas de 3 dígitos.
+
+const exercise10 = () => {
+    const numRandom = [];
+    for (let i = 0; i < 10; i++) {
+        numRandom.push(Math.floor(Math.random() * 1500));// nos genera los numeros aleatorios.
+    }
+
+    let numTreeDigits = []; //Nos guarda el numero que tengan 3 digitos. 
+    let positionNumTreeD = []; // nos da la posicion de los numeros que tengan 3 digitos 
+
+    for (let i = 1; i < numRandom.length; i++) {
+        if (numRandom[i] > 999) {
+            numTreeDigits.push(numRandom[i]);
+            positionNumTreeD.push(i + 1);
+        }
+    }
+
+    const oneNumber = `El número con mas de 3 digitos es  ${numTreeDigits} y su posicion es ${positionNumTreeD} y el array es ${numRandom}`
+
+    const manyNumbers = `Los numeros con mas de 3 digitos son  ${numTreeDigits} y sus posiciones son ${positionNumTreeD}  y el array es ${numRandom}`
+
+    return numTreeDigits.length < 2 ? oneNumber : manyNumbers;
+}
+
+    const result10 = document.getElementById("arr10");
+    result10.innerHTML = exercise10();
+
+//12. Leer 10 números enteros, almacenarlos en un vector y determinar a cuánto es igual el promedio entero de los datos del vector.
+
+const exercise12 = () => {
+    const theNumbersRandom = [];
+
+    for (let i = 0; i < 10; i++) {
+        theNumbersRandom.push(Math.floor(Math.random() * 100));
+    }
+
+    let sumNumbers = 0;
+    let resultProm = 0;
+
+    for (let i = 0; i < theNumbersRandom.length; i++) {
+        sumNumbers = sumNumbers + theNumbersRandom[i] ;
+        resultProm = parseInt(sumNumbers / 10);
+    }
+    return `la suma del array es ${sumNumbers}, y su promedio es ${resultProm} y este es el array ${theNumbersRandom}`;
+}
+
+    const result12 = document.getElementById("arr12");
+    result12.innerHTML = exercise12();
 
 
 
