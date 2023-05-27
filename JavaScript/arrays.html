@@ -20,6 +20,8 @@
     <div id="arr12"></div>
     <h2>Exercises 21</h2>
     <div id="arr21"></div>
+    <h2>Exercises 23</h2>
+    <div id="arr23"></div>
     
 </body>
 <script>
@@ -196,6 +198,48 @@ const exercise21 = () => {
 
 //23. Leer 10 números enteros, almacenarlos en un vector y determinar si existe al menos un número repetido.
 
+const exercise23 = () => {
+    const numbersVec = [];
+    for (let i = 0; i < 5; i++) {
+        numbersVec.push(Math.floor(Math.random() * 10));
+    }
+
+    // for (let i = 0; i < numbersVec.length; i++) {
+    //     let ocurrences = 0;
+    //     const externalNumber = numbersVec[i];
+    //     for (let j = 0; j < numbersVec.length; j++) {
+    //         const internalNumber = numbersVec[j];
+    //         if (externalNumber === internalNumber) {
+    //             ocurrences++;
+    //         }
+
+    //         if (ocurrences > 1) {
+    //             return `${numbersVec.join(', ')}: Se encontró un número repetido: ${externalNumber}, en la posicion ${i} y la ${j}`
+    //         }
+    //     }
+    // }
+
+    // return `${numbersVec.join(', ')}: No hay número repetidos`;
+
+    for (let i = 0; i < numbersVec.length; i++) {
+        let countNumRepeat = 0;
+        for (let j = 0; j < numbersVec.length; j++) {
+            const leftNumber = numbersVec[i];
+            if (leftNumber === numbersVec[j]) {
+                countNumRepeat++;
+            }
+
+            if (countNumRepeat === 2) {
+                return `Del array ${numbersVec} esta es las veces que se repite un numero ${countNumRepeat} el número ${leftNumber}`;
+            }
+        }
+    }
+
+    return `del array ${numbersVec} esta es las veces que se repite un numero ${countNumRepeat}`;
+}
+
+    const result23 = document.getElementById("arr23");
+    result23.innerHTML = exercise23();
 
 
 </script>
