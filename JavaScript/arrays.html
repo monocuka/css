@@ -26,6 +26,8 @@
     <div id="arr28"></div>
     <h2>Exercises 40</h2>
     <div id="arr40"></div>
+    <h2>Exercises 42</h2>
+    <div id="arr42"></div>
 </body>
 <script>
 //1. Leer 10 enteros, almacenarlos en un vector y determinar en qué posición del vector está el mayor número leído.
@@ -286,24 +288,39 @@ const exercise40 = () => {
 
 //42. Leer 10 números enteros, almacenarlos en un vector y determinar cuántos números con cantidad par de dígitos pares hay almacenados en dicho vector.
 
-const exercises42 = () => {
+const exercise42 = () => {
 
     const theVector = [];
 
     for (let i = 0; i < 10; i++) {
-        theVector.push(Math.floor(Math.random() * 100));
+        theVector.push(Math.floor(Math.random() * 100));     
     }
 
     let counter = [];
+    let numPairDigitPair = [];
 
     for (let i = 0; i < theVector.length; i++) {
         if (theVector[i] % 2 === 0) {
-            counter.push;
+            counter.push(theVector[i]);
+        }
+    }
+    for (let i = 0; i < counter.length; i++) {
+        let digitOne = parseInt(counter[i] / 10);
+        let digitTwo = counter[i] % 10;
+        if (digitOne % 2 === 0 && digitTwo % 2 === 0 ) {
+            numPairDigitPair.push(counter[i]);
         }
         
     }
-
+    const numDigitPair = `Estos son los numeros par con digitos par: ${numPairDigitPair} --- del array principal ${theVector}`;
+    const noDigitPair = `En este array: ${theVector} no hay numeros con sus digitos par.`;
+    
+    return numPairDigitPair.length > 0 ? numDigitPair : noDigitPair;
+    
 
 }
+
+const resultExercise42 = document.getElementById("arr42");
+resultExercise42.innerHTML = exercise42();
 </script>
 </html>
