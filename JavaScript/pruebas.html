@@ -19,5 +19,23 @@
         return result;
     }
     console.log(powerOfTwo(10));
+
+for (let i = 0; i < numbersVec.length; i++) {
+        let ocurrences = 0;
+        const externalNumber = numbersVec[i];
+        for (let j = 0; j < numbersVec.length; j++) {
+            const internalNumber = numbersVec[j];
+            if (externalNumber === internalNumber) {
+                ocurrences++;
+            }
+
+            if (ocurrences > 1) {
+            return `${numbersVec.join(', ')}: Se encontró un número repetido: ${externalNumber}, en la posicion ${i} y la ${j}`
+        }
+    }
+}
+
+return `${numbersVec.join(', ')}: No hay número repetidos`;
+
 </script>
 </html>

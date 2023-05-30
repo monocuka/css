@@ -22,7 +22,10 @@
     <div id="arr21"></div>
     <h2>Exercises 23</h2>
     <div id="arr23"></div>
-    
+    <h2>Exercises 28</h2>
+    <div id="arr28"></div>
+    <h2>Exercises 40</h2>
+    <div id="arr40"></div>
 </body>
 <script>
 //1. Leer 10 enteros, almacenarlos en un vector y determinar en qué posición del vector está el mayor número leído.
@@ -200,26 +203,9 @@ const exercise21 = () => {
 
 const exercise23 = () => {
     const numbersVec = [];
-    for (let i = 0; i < 5; i++) {
-        numbersVec.push(Math.floor(Math.random() * 10));
+    for (let i = 0; i < 10; i++) {
+        numbersVec.push(Math.floor(Math.random() * 100));
     }
-
-    // for (let i = 0; i < numbersVec.length; i++) {
-    //     let ocurrences = 0;
-    //     const externalNumber = numbersVec[i];
-    //     for (let j = 0; j < numbersVec.length; j++) {
-    //         const internalNumber = numbersVec[j];
-    //         if (externalNumber === internalNumber) {
-    //             ocurrences++;
-    //         }
-
-    //         if (ocurrences > 1) {
-    //             return `${numbersVec.join(', ')}: Se encontró un número repetido: ${externalNumber}, en la posicion ${i} y la ${j}`
-    //         }
-    //     }
-    // }
-
-    // return `${numbersVec.join(', ')}: No hay número repetidos`;
 
     for (let i = 0; i < numbersVec.length; i++) {
         let countNumRepeat = 0;
@@ -230,17 +216,94 @@ const exercise23 = () => {
             }
 
             if (countNumRepeat === 2) {
-                return `Del array ${numbersVec} esta es las veces que se repite un numero ${countNumRepeat} el número ${leftNumber}`;
+                return `Del array ${numbersVec} el numero que se repite es ${ leftNumber} `;
             }
         }
     }
-
-    return `del array ${numbersVec} esta es las veces que se repite un numero ${countNumRepeat}`;
+    
+    return `del array ${numbersVec} no hay numeros repetidos`;
 }
 
     const result23 = document.getElementById("arr23");
     result23.innerHTML = exercise23();
 
+//28. Leer 10 números enteros, almacenarlos en un vector y mostrar en pantalla todos los enteros comprendidos entre 1 y cada uno de los números almacenados en el vector.
 
+const Exercise28 = () => {
+    const arrayNumbers = [];
+    for (let i = 0; i < 10; i++) {
+        arrayNumbers.push(Math.floor(Math.random() * 10));
+    }
+    
+    let counterArray = [];
+    for (let i = 0; i < arrayNumbers.length; i++) {
+            for (let x = 1; x < arrayNumbers[i]; x++) {
+                counterArray.push(x);
+            }
+    }
+    return `este es el vector 1 ${arrayNumbers},y este es el de los numero desde 1 hasta cada uno de los numero del vector ${counterArray}`;
+}
+
+    const result28 = document.getElementById("arr28");
+    result28.innerHTML = Exercise28();
+
+//40. Leer 10 números enteros, almacenarlos en un vector y determinar cuántos números de los almacenados en dicho vector terminan en 15.
+
+const exercise40 = () => {
+
+    const vectorNumbers = [];
+
+    for (let i = 0; i < 10; i++) {
+        vectorNumbers.push(Math.floor(Math.random() * 1000))
+    }
+
+
+    let counter = 0;
+    let position = [];
+    
+
+    for (let i = 0; i < vectorNumbers.length; i++) {
+        if (vectorNumbers[i] === 15) {
+            position.push(i);
+                    counter++;
+        }
+        
+        if (vectorNumbers[i] > 100) {
+            let twoDigits = vectorNumbers[i] % 100;
+                if (twoDigits === 15) {
+                    position.push(i);
+                    counter++;
+                }
+        }
+    }
+    if (counter > 0) {
+        return ` esta es la cantidad de numero que finalizan en 5: ${counter}, este es el array ${vectorNumbers}--- y esta es la posicion de cada numero en el array: ${position}`
+    }
+    return `en este array ${vectorNumbers}: no hay numeros terminados en 5 `
+} 
+    const result40 = document.getElementById("arr40");
+    result40.innerHTML = exercise40();
+
+//42. Leer 10 números enteros, almacenarlos en un vector y determinar cuántos números con cantidad par de dígitos pares hay almacenados en dicho vector.
+
+const exercises42 = () => {
+
+    const theVector = [];
+
+    for (let i = 0; i < 10; i++) {
+        theVector.push(Math.floor(Math.random() * 100));
+    }
+
+    let counter = [];
+
+    for (let i = 0; i < theVector.length; i++) {
+        if (theVector[i] % 2 === 0) {
+            counter.push;
+        }
+        
+    }
+
+
+}
 </script>
 </html>
