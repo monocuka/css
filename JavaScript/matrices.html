@@ -10,12 +10,20 @@
     <h1>Matrices</h1>
     <h2>Ejercicio 1 </h2>
     <div id="mat1"></div>
-    
+    <div id="arr1"></div>
+    <h2>Ejercicio 4 </h2>
+    <div id="mat4"></div>
+    <div id="arr4"></div>
+    <h2>Ejercicio 7 </h2>
+    <div id="mat7"></div>
+    <div id="arr7"></div>
 </body>
 <script>
 //1. Leer una matriz 4x4 entera y determinar en qué fila y en qué columna se encuentra el número mayor.
 
 const exercise1 = () => {
+    
+    let arrExer1 = "";
     let theVector = [];
 
 //llenar array
@@ -24,8 +32,10 @@ const exercise1 = () => {
         for (let columna = 0; columna < 4; columna++) {
         theVector[fila][columna] = Math.floor(Math.random() * 100);
         }
-        document.writeln(`[${theVector[fila]}] <br/>`);
-}
+        arrExer1 += `[${theVector[fila]}] <br/>`;
+    }
+    document.getElementById("arr1").innerHTML = arrExer1;
+
 
 //consulta
     let biggerNumber = 0;
@@ -48,5 +58,102 @@ const exercise1 = () => {
 const result1 = document.getElementById("mat1");
 result1.innerHTML = exercise1();
 
+//4. Leer una matriz 4x3 entera y determinar en qué posiciones exactas se encuentran los números primos.
+
+const isPrime = (number) => {
+    for(let i = 2; i < number; i++){
+        if(number % i === 0){
+            return false;
+        }
+        }
+        return true;
+    }
+
+const exercise4 = () => {
+
+    let arrStr = "";
+    let matrix = [];
+
+    for (let row = 0; row < 4; row++) {
+        matrix[row] = [];
+        for (let column = 0; column < 3; column++) {
+        matrix[row][column] = Math.floor(Math.random() * 100);
+        }
+        arrStr += `[${matrix[row]}] <br/>`;
+    }
+    document.getElementById("arr4").innerHTML = arrStr;
+
+    let prime = [];
+    let posi = [];
+    let row1 = 0;
+    let column2 = 0;
+    let counter = 0;
+
+    for (let row = 0; row < 4; row++) {
+        for (let column = 0; column < 3; column++) {
+            if (isPrime(matrix[row][column])) {
+                prime.push(matrix[row][column]);
+                row1 = row  ;
+                column2 = column;
+                posi[counter] = `[${row} - ${column}]`;
+                counter++;
+            }
+        }
+    }
+    const resul1P = `los siguientes numeros son primos: ${prime.join(', ') } y estan en la posiciones: ${posi.join('; ' )} `;
+    const noPrime = `no hay numeros primos en la Matriz: `;
+
+    return counter > 0 ? resul1P : noPrime ;
+}
+
+const result4 = document.getElementById("mat4");
+result4.innerHTML = exercise4();
+
+//7. Leer una matriz 4x4 entera y determinar en qué posiciones están los enteros terminados en 0.
+
+const exercise7 = () => {
+    let arrayMatrix = "";
+    let theArray = [];
+
+    for (let file = 0; file < 4; file++) {
+        theArray[file] = [];
+        for (let  spine = 0;   spine < 4 ; spine++) {
+            theArray[file][spine] = Math.floor(Math.random() * 100);
+        }
+        arrayMatrix += `[${theArray[file]}] <br/>`;
+    }
+    document.getElementById("arr7").innerHTML = arrayMatrix;
+
+    let numFinalCero = [];
+    let file1 = 0;
+    let spine2 = 0;
+    let position = [];
+    let count = 0;
+    for (let file = 0; file < 4; file++) {
+        for (let spine = 0; spine < 4; spine++) {
+            if (theArray[file][spine] < 10 && theArray[file][spine] === 0) {
+                numFinalCero.push(theArray[file][spine]);
+                file1 = file
+                spine2 = spine;
+                position[count] = `[${file} ${spine}]`;
+                count++;
+            }
+            if (theArray[file][spine] >= 10 && theArray[file][spine] % 10 === 0) {
+                    numFinalCero.push(theArray[file][spine])
+                    position[count] =  `[${file} ${spine}]`;
+                    count++;             
+            }
+        }    
+    }
+    const trueResponse = `Estos son los numeros que terminan en cero ${numFinalCero} y estas son sus posiciones: ${position}`;
+    const falceFinalCero = `No hay numeros que terminen en cero en esta matriz`
+
+    return count > 0 ? trueResponse : falceFinalCero;
+}
+
+const finalExercise7 = document.getElementById("mat7");
+finalExercise7.innerHTML = exercise7();
+
+//
 </script>
 </html>
