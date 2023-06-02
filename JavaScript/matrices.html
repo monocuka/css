@@ -17,8 +17,45 @@
     <h2>Ejercicio 7 </h2>
     <div id="mat7"></div>
     <div id="arr7"></div>
+    <h2>Ejercicio 11</h2>
+    <div id="mat11"></div>
+    <div id="arr11"></div>
+    <h2>Ejercicio 14</h2>
+    <div id="mat14"></div>
+    <div id="arr14"></div
 </body>
 <script>
+
+//funciones comunes
+//Generar random array.
+const generateRandomArry = (row, columns) => {
+    let matriz = [];
+
+    for (let i = 0; i < row; i++) {
+        matriz[i] = [];
+        for (let j = 0; j < columns; j++) {
+            matriz[i][j] = Math,floor(Math.random() * 100);
+        }
+    }
+    return matriz;
+}
+const arrayToString = (arr) => {
+    let stringArray = "";
+    for (let i = 0; i < arr.length; i++) {
+        stringArray += (`[${arr[i]}] <br/>`);
+    }
+    return stringArray;
+}
+//funcion para saber si los numeros son primos 
+
+const isPrime = (number) => {
+    for(let i = 2; i < number; i++){
+        if(number % i === 0){
+            return false;
+        }
+        }
+        return true;
+    }
 //1. Leer una matriz 4x4 entera y determinar en qué fila y en qué columna se encuentra el número mayor.
 
 const exercise1 = () => {
@@ -59,16 +96,6 @@ const result1 = document.getElementById("mat1");
 result1.innerHTML = exercise1();
 
 //4. Leer una matriz 4x3 entera y determinar en qué posiciones exactas se encuentran los números primos.
-
-const isPrime = (number) => {
-    for(let i = 2; i < number; i++){
-        if(number % i === 0){
-            return false;
-        }
-        }
-        return true;
-    }
-
 const exercise4 = () => {
 
     let arrStr = "";
@@ -154,6 +181,66 @@ const exercise7 = () => {
 const finalExercise7 = document.getElementById("mat7");
 finalExercise7.innerHTML = exercise7();
 
-//
+//Leer una matriz 5x3 entera y determinar en qué columna está el menor número par.
+
+const exercise11 = () => {
+
+    let matriz = []
+    let matrizSt = "";
+
+    for (let row = 0; row < 5; row++) {
+        matriz[row] = [];
+        for (let  column = 0;   column < 3 ; column++) {
+            matriz[row][column] = Math.floor(Math.random() * 100);
+        }
+        matrizSt += `[${matriz[row]}] <br/>`;
+    }
+    document.getElementById("arr11").innerHTML =  matrizSt;
+
+    
+    let position = [];
+    let smallestPairNumber = 0; //guarda el numero mpar menor 
+    let counter = 0;//1
+    let smallerNumberColumn = 0; // guarda la columna del numero menor 
+    
+    for (let row = 0; row < 5; row++) {
+        for (let column = 0; column < 3; column++) {
+            if (matriz[row][column] % 2 === 0 ) {
+                if (counter === 0) {
+                    smallestPairNumber = matriz[row][column];
+                    counter++;
+                }
+            if (matriz[row][column] < smallestPairNumber) {
+                smallestPairNumber = matriz[row][column]
+                smallerNumberColumn = column +1;
+                position[counter] = `[${smallerNumberColumn}]`;
+                }  
+            }
+        }
+    }
+    const trueResult = `el numero par menor del array es ${smallestPairNumber} y su posicion en columna es ${position} `
+    const falseResult = "no hay numeros par en esta matriz"
+
+    return counter > 0 ? trueResult : falseResult;
+} 
+
+const resultExer11 = document.getElementById("mat11");
+resultExer11.innerHTML = exercise11();
+
+//14. Leer una matriz 5x5 entera y determinar cuántos números almacenados en ella tienen mas de 3 dígitos.
+
+const exercise14 = () => {
+
+    let matriz = generateRandomArray(5, 5);
+    document.getElementById('arr14').innerHTML = ArrayToString(matriz);
+
+    let 
+    for (let row = 0; row < 5; row++) {
+        
+        
+    }
+
+
+}
 </script>
 </html>
