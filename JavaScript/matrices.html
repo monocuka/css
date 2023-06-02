@@ -10,35 +10,45 @@
     <h1>Matrices</h1>
     <h2>Ejercicio 1 </h2>
     <div id="mat1"></div>
+    <br/>
     <div id="arr1"></div>
     <h2>Ejercicio 4 </h2>
     <div id="mat4"></div>
+    <br/>
     <div id="arr4"></div>
     <h2>Ejercicio 7 </h2>
     <div id="mat7"></div>
+    <br/>
     <div id="arr7"></div>
     <h2>Ejercicio 11</h2>
     <div id="mat11"></div>
+    <br/>
     <div id="arr11"></div>
     <h2>Ejercicio 14</h2>
     <div id="mat14"></div>
-    <div id="arr14"></div
+    <br/>
+    <div id="arr14"></div>
+    <h2>Ejercicio 18</h2>
+    <div id="mat18"></div>
+    <br/>
+    <div id="arr18"></div
 </body>
 <script>
 
 //funciones comunes
 //Generar random array.
-const generateRandomArry = (row, columns) => {
+const generateRandomArray = (row, columns) => {
     let matriz = [];
 
     for (let i = 0; i < row; i++) {
         matriz[i] = [];
         for (let j = 0; j < columns; j++) {
-            matriz[i][j] = Math,floor(Math.random() * 100);
+            matriz[i][j] = Math.floor(Math.random() * 100);
         }
     }
     return matriz;
 }
+
 const arrayToString = (arr) => {
     let stringArray = "";
     for (let i = 0; i < arr.length; i++) {
@@ -156,6 +166,7 @@ const exercise7 = () => {
     let spine2 = 0;
     let position = [];
     let count = 0;
+
     for (let file = 0; file < 4; file++) {
         for (let spine = 0; spine < 4; spine++) {
             if (theArray[file][spine] < 10 && theArray[file][spine] === 0) {
@@ -232,15 +243,57 @@ resultExer11.innerHTML = exercise11();
 const exercise14 = () => {
 
     let matriz = generateRandomArray(5, 5);
-    document.getElementById('arr14').innerHTML = ArrayToString(matriz);
+    document.getElementById('arr14').innerHTML = arrayToString(matriz);
 
-    let 
+    let count = 0 ;
     for (let row = 0; row < 5; row++) {
-        
-        
+        for (let spine = 0; spine < 5; spine++) {
+            if (matriz[row][spine] > 99 && matriz[row][spine] < 1000 ) {
+                count++;
+            }
+        }
     }
+    const trueResponse = `en la Matriz hay ${count} numeros con 3 digitos `;
+    const falseResponse = "no hay numeros de tres digitos en esta matriz ";
 
-
+    return count > 0 ? trueResponse : falseResponse; 
 }
+
+const exer14Result = document.getElementById("mat14");
+exer14Result.innerHTML = exercise14();
+
+//18. Leer una matriz 5x5 entera y determinar en qué posición exacta se encuentra el mayor múltiplo de 8.
+
+const exercise18 = () => {
+
+    let matriz = generateRandomArray(5, 5);
+    document.getElementById('arr18').innerHTML = arrayToString(matriz);
+
+    let count = 0;
+    let multiEight = 0;
+    let rowPosition = 0;
+    let columnPosition = 0; 
+    
+
+    for (let row = 0; row < 5; row++) {
+        for (let column = 0; column < 5; column++) {
+            if (matriz[row][column] % 8 === 0 && matriz[row][column] > multiEight) {
+                multiEight = matriz[row][column];
+                rowPosition = row;
+                columnPosition = column;
+                count++;
+            }
+        }
+    }
+    const found = `El mayor multiplo de 8 es ${multiEight} y su posiscion es ${rowPosition}, ${columnPosition}`;
+    const notFound = "no hay multiplos de 8";
+
+    return count > 0 ? found : notFound;
+}
+
+const result18 = document.getElementById("mat18");
+result18.innerHTML = exercise18();
+
+//
 </script>
 </html>
