@@ -31,7 +31,15 @@
     <h2>Ejercicio 18</h2>
     <div id="mat18"></div>
     <br/>
-    <div id="arr18"></div
+    <div id="arr18"></div>
+    <h2>Ejercicio 21</h2>
+    <div id="mat21"></div>
+    <br/>
+    <div id="arr21"></div>
+    <br/>
+    <div id="arr21A">
+
+    
 </body>
 <script>
 
@@ -294,6 +302,51 @@ const exercise18 = () => {
 const result18 = document.getElementById("mat18");
 result18.innerHTML = exercise18();
 
-//
+//21. Leer dos matrices 4x5 enteras y determinar cuántos datos tienen en común.
+
+const exerciseTwoArr = () => {
+
+    let matriz = generateRandomArray(4, 5);
+    document.getElementById('arr21').innerHTML = arrayToString(matriz);
+    let matrix = generateRandomArray(4, 5);
+    document.getElementById('arr21A').innerHTML = arrayToString(matrix);
+
+    let repeatedNumbers = [];
+    let counter = 0;
+
+    for (let row1 = 0; row1 < 4; row1++) {
+        for (let column1 = 0; column1 < 5; column1++) {
+            for (let row2 = 0; row2 < 4; row2++) {
+                for (let column2 = 0; column2 < 5; column2++) {
+                    if (matriz[row1][column1] === matrix[row2][column2]) {
+                        repeatedNumbers.push(matriz[row1][column1])
+                        counter++;
+                    }
+                }   
+            }
+        }
+    }
+    
+    const dataEqual = `En las dos matrices hay ${counter} numeros respetido y son ${repeatedNumbers}`;
+    const noRepeat = " no hay datos repetidos en las matrices"
+
+    return counter > 0 ? dataEqual : noRepeat;
+
+}
+
+const finalExercise21 = document.getElementById("mat21");
+finalExercise21.innerHTML = exerciseTwoArr();
+
+//24. Leer dos matrices 4x5 enteras y determinar si el mayor número primo de una de las matrices también se encuentra en la otra matriz.
+
+const exerciseArray2 = () => {
+
+    let matriz = generateRandomArray(4, 5);
+    document.getElementById('arr21').innerHTML = arrayToString(matriz);
+    let matrix = generateRandomArray(4, 5);
+    document.getElementById('arr21A').innerHTML = arrayToString(matrix);
+
+    
+}
 </script>
 </html>
