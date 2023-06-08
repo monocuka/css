@@ -37,9 +37,23 @@
     <br/>
     <div id="arr21"></div>
     <br/>
-    <div id="arr21A">
-
-    
+    <div id="arr21A"></div>
+    <h2>Ejercicio 24</h2>
+    <div id="mat24"></div>
+    <br/>
+    <div id="arr24"></div>
+    <br/>
+    <div id="arr24A"></div>
+    <h2>Ejercicio 29 </h2>
+    <div id="mat29"></div>
+    <br/>
+    <div id="arr29"></div>
+    <h2>Ejercicio 33</h2>
+    <div id="mat33"></div>
+    <br/>
+    <div id="arr33"></div>
+    <br/>
+    <div id="arr33A"></div>
 </body>
 <script>
 
@@ -51,7 +65,7 @@ const generateRandomArray = (row, columns) => {
     for (let i = 0; i < row; i++) {
         matriz[i] = [];
         for (let j = 0; j < columns; j++) {
-            matriz[i][j] = Math.floor(Math.random() * 100);
+            matriz[i][j] = Math.floor(Math.random() * 10);
         }
     }
     return matriz;
@@ -67,6 +81,9 @@ const arrayToString = (arr) => {
 //funcion para saber si los numeros son primos 
 
 const isPrime = (number) => {
+    if (number === 1 || number === 2) {
+        return true;
+    }
     for(let i = 2; i < number; i++){
         if(number % i === 0){
             return false;
@@ -342,11 +359,74 @@ finalExercise21.innerHTML = exerciseTwoArr();
 const exerciseArray2 = () => {
 
     let matriz = generateRandomArray(4, 5);
-    document.getElementById('arr21').innerHTML = arrayToString(matriz);
+    document.getElementById('arr24').innerHTML = arrayToString(matriz);
     let matrix = generateRandomArray(4, 5);
-    document.getElementById('arr21A').innerHTML = arrayToString(matrix);
+    document.getElementById('arr24A').innerHTML = arrayToString(matrix);
 
-    
+    let numMayorPrime = 0;
+    let prueba = [];
+    let count = 0;
+
+    for (let row = 0; row < 4; row++) {
+        for (let column = 0; column < 5; column++) {
+            if (isPrime(matriz[row][column]) && matriz[row][column] > numMayorPrime) {
+                    numMayorPrime = matriz[row][column];
+            }
+        }
+        for (let row2 = 0; row2 < 4; row2++) {
+            for (let column2 = 0; column2 < 5; column2++) {
+                if (matrix[row2][column2] === numMayorPrime) {
+                    count++;
+                    }
+                }
+            }    
+    }
+        const isPrimeN = `${numMayorPrime} este es el mayor numero primo que se repite en las dos matrices`
+        const noPrime = `${numMayorPrime} el numero mayor primo de la primera matriz no esta en la segunda matriz `;
+        return count > 0 ? isPrimeN : noPrime;
+    }
+
+const resultExercisearrayPrime = document.getElementById("mat24");
+resultExercisearrayPrime.innerHTML = exerciseArray2();
+
+
+//29. Leer una matriz 4x6 entera y determinar si alguno de sus números está repetido al menos 3 veces.
+
+const exercise29 = () => {
+    let theMatriz = generateRandomArray(4, 6);
+    document.getElementById('arr29').innerHTML = arrayToString(theMatriz);
+
+    let OneNumber = 0;
+    let count = 0;
+
+    for (let row = 0; row < 4; row++) {
+        for (let column = 0; column < 6; column++) {
+            if (row === 0 && column === 0) {
+                OneNumber = theMatriz[row][column];
+                //count = -1;
+            }
+            if (theMatriz[row][column] === OneNumber) {
+                count++;
+            }
+        }
+    }
+    const trueResul = `este numero ${OneNumber} se repite por lo menos 3 veces en la matriz`;
+    const falseResult = ` este ${OneNumber} se repite menos de 3 veces`;
+
+    return count >= 3 ? trueResul : falseResult;
+}
+
+const resultExercise29 = document.getElementById("mat29");
+resultExercise29.innerHTML = exercise29();
+
+//33. Leer una matriz 4x6 entera y determinar en qué posiciones están los menores pares por fila.
+
+const arrayDouble = () => {
+
+    let matriz = generateRandomArray(4, 6);
+    document.getElementById('arr33').innerHTML = arrayToString(matriz);
+    let matrix = generateRandomArray(4, 6);
+    document.getElementById('arr33A').innerHTML = arrayToString(matrix);
 }
 </script>
 </html>
