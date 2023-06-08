@@ -48,7 +48,12 @@
     <div id="mat29"></div>
     <br/>
     <div id="arr29"></div>
-    
+    <h2>Ejercicio 33</h2>
+    <div id="mat33"></div>
+    <br/>
+    <div id="arr33"></div>
+    <br/>
+    <div id="arr33A"></div>
 </body>
 <script>
 
@@ -413,5 +418,15 @@ const exercise29 = () => {
 
 const resultExercise29 = document.getElementById("mat29");
 resultExercise29.innerHTML = exercise29();
+
+//33. Leer una matriz 4x6 entera y determinar en qué posiciones están los menores pares por fila.
+
+const arrayDouble = () => {
+
+    let matriz = generateRandomArray(4, 6);
+    document.getElementById('arr33').innerHTML = arrayToString(matriz);
+    let matrix = generateRandomArray(4, 6);
+    document.getElementById('arr33A').innerHTML = arrayToString(matrix);
+}
 </script>
 </html>
