@@ -8,18 +8,26 @@
 </head>
 <body>
     <h1>Funciones</h1>
-    
+    <h2>exerc1</h2>
+    <div id="resul1"></div>
+    <h2>exerc2</h2>
+    <div id="resul2"></div>
+    <h2>exerc3</h2>
+    <div id="resul3"></div>
+    <h2>exerc4</h2>
+    <div id="resul4"></div>
 </body>
 <script>
 //Funciones para tareas especificas.
 
 //Función para generar numeros.
 
-const numberGenerate = () => Math.floor(Math.random() * 100);
+const numberGenerate = (maxNumber) => Math.floor(Math.random() * maxNumber);
 
-//Función para Obtener el ultimo digito.
+//Función para Obtener el ultimo digito y los dos ultimos
 
-const finalDigit = () => num % 10;
+const finalDigit = (num) => num % 10;
+const twoDigitsF = (number) => number % 100;
 
 //Función para contar los dígitos de un número.
 
@@ -132,6 +140,37 @@ const numberLargestArray = (randomNumbers) => {
 
 //------------------------------------------------------// 
 
+//1. Construir una función que reciba como parámetro un entero y retorne su último dígito.
 
+const digitFinalNum = () => finalDigit(numberGenerate(100));
+
+const resultDigitFinal = document.getElementById("resul1");
+resultDigitFinal.innerHTML = digitFinalNum();
+
+//2. Construir una función que reciba como parámetro un entero y retorne sus dos últimos dígitos.
+
+const twoFinalDigits = () => {
+    let number = numberGenerate(5000);
+    let numsFinals = 0;
+    if (number > 99) {
+        numsFinals = twoDigitsF(number)
+    }
+    const resulTrue = `${numsFinals} estos son los ultimos dos digitos de ${number}`;
+    const resultFalse = `${number} no es un un numero de mas de 2 digitos`
+
+    return numsFinals > 0 ? resulTrue : resultFalse;
+}
+
+const resultTwoD = document.getElementById("resul2");
+resultTwoD.innerHTML = twoFinalDigits();
+
+//3. Construir una función que reciba como parámetro un entero y retorne la cantidad de dígitos.
+
+const digitsNumber = (maxNumbers) => `el numero tiene  ${counterNumber(numberGenerate(5000))} digitos`;
+
+const resultDigits = document.getElementById("resul3");
+resultDigits.innerHTML = digitsNumber();
+
+//
 </script>
 </html>
