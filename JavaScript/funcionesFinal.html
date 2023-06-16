@@ -137,6 +137,20 @@ const numberLargestArray = (randomNumbers) => {
     }
     return maxim;
 }
+// función para saber si un numero es par.
+
+const isPairNumber = (number) => number % 2 === 0;
+
+//Función para volver un numero en array.
+
+const numberToArray = (number) => {
+    
+    const stringNum = number.toString();// convertir numero en cadena de texto
+    const arrayNum = stringNum.split(''); //Divide una cadena en un array 
+    const numberToArray = arrayNum.map(digit => parseInt(digit));
+
+    return numberToArray;
+}
 
 //------------------------------------------------------// 
 
@@ -171,6 +185,26 @@ const digitsNumber = (maxNumbers) => `el numero tiene  ${counterNumber(numberGen
 const resultDigits = document.getElementById("resul3");
 resultDigits.innerHTML = digitsNumber();
 
-//
+//Construir una función que reciba como parámetro un entero y retorne la cantidad de dígitos pares.
+
+const digitsPairs = () => {
+    let number = numberGenerate(5000);
+    let arrNum = numberToArray(number)
+    let counter = 0;
+    
+    for (let i = 0; i <= arrNum.length; i++) {
+        if (isPairNumber(arrNum[i])) {
+            counter++
+        }
+    }
+
+
+    const resultTrue1 = `hay ${counter} digitos pares en el numero ${number}`;
+    const falseResult = `No hay pares en el numero ${number}`
+
+    return counter > 0 ? resultTrue1 : falseResult;
+}
+const resultDigitsPairs = document.getElementById("resul4");
+resultDigitsPairs.innerHTML = digitsPairs();
 </script>
 </html>
