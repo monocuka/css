@@ -29,7 +29,10 @@
     <h2>Exercises 42</h2>
     <div id="arr42"></div>
 </body>
-<script>
+<script type="module">
+
+import { isPrime } from './functions.js';
+
 //1. Leer 10 enteros, almacenarlos en un vector y determinar en qué posición del vector está el mayor número leído.
         const exercise1 = () => {
         let randomNumbers = [];
@@ -84,15 +87,6 @@
     //result.innerHTML = arrNumbers();
 
 //ejercicio 5 
-
-const isPrime = (number) => {
-    for(let i = 2; i < number; i++){
-        if(number % i === 0){
-            return false;
-        }
-        }
-        return true;
-    }
 
     const exercise5 = () => {
     
