@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter } from '../src/JavaScript/functions.js';
+import { convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter, isPrime } from '../src/JavaScript/functions.js';
 
 describe('convertAgeToSeconds', () => {
     it('should be a function', () => {
@@ -39,6 +39,21 @@ describe('firstLetter', () => {
         expect(firstLetter("eliana")).toBe('E');
     });
 });
+
+describe('isPrime', () => {
+    it('should be a function', () => {
+        expect(typeof isPrime).toBe('function');
+    });
+    it('is Prime Number', () => {
+        expect(isPrime(7)).toBe(true);
+    });
+    it('is not Prime Number', () => {
+        expect(isPrime(6)).toBe(false);
+    });
+    it('is Number 1 ', () => {
+        expect(isPrime(1)).toBe(true);
+    });
+})
 
 
 

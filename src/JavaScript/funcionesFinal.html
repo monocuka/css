@@ -30,7 +30,10 @@
     <div id="resul49"></div>
     <div id="arr49"></div>
 </body>
-<script>
+<script type="module">
+
+    import { isPrime } from './functions.js';
+
 //Funciones para tareas especificas.
 
 //Función para generar numeros.
@@ -87,19 +90,6 @@ const arrayToString = (arr) => {
     }
     return stringArray;
 }
-//funcion para saber si los numeros son primos 
-
-const isPrime = (number) => {
-    if (number === 1 || number === 2) {
-        return true;
-    }
-    for(let i = 2; i < number; i++){
-        if(number % i === 0){
-            return false;
-        }
-        }
-        return true;
-    }
 
 //calcular el factorial de un Número.
 

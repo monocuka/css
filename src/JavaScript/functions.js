@@ -7,6 +7,17 @@ const getProfits = (earnings, costs, taxes) => (earnings - costs) * ((100-taxes)
 // Ejercicio 4 
 const firstLetter =(FisrtName) => FisrtName.charAt(0).toUpperCase(); 
 
+const isPrime = (number) => {
+    if (number === 1 || number === 2) {
+        return true;
+    }
+    for(let i = 2; i < number; i++){
+        if(number % i === 0){
+            return false;
+        }
+        }
+        return true;
+    }
 
 
-export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter};
+export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter, isPrime};

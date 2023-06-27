@@ -55,8 +55,8 @@
     <br/>
     
 </body>
-<script>
-
+<script type="module">
+import { isPrime } from './functions.js';
 //funciones comunes
 //Generar random array.
 const generateRandomArray = (row, columns) => {
@@ -78,19 +78,6 @@ const arrayToString = (arr) => {
     }
     return stringArray;
 }
-//funcion para saber si los numeros son primos 
-
-const isPrime = (number) => {
-    if (number === 1 || number === 2) {
-        return true;
-    }
-    for(let i = 2; i < number; i++){
-        if(number % i === 0){
-            return false;
-        }
-        }
-        return true;
-    }
 //1. Leer una matriz 4x4 entera y determinar en qué fila y en qué columna se encuentra el número mayor.
 
 const exercise1 = () => {
