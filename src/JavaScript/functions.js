@@ -74,13 +74,7 @@ const factorialNumber = (num) => {
     return multiplication;
 }
 
-const isNumberMultiple = (num1, num2) => {
-
-    if (num2 % num1 === 0) {
-        return true;
-    }
-    return false;
-} 
+const isNumberMultiple = (num1, num2) => num2 % num1 === 0;
 
 const randomArrayGenerator = (number) => {
     const randomNumbers = [];
