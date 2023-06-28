@@ -19,5 +19,70 @@ const isPrime = (number) => {
         return true;
     }
 
+const finalDigit = (num) => num % 10;
 
-export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter, isPrime};
+const twoDigitsF = (number) => number % 100
+
+
+
+const numberGenerate = (maxNumber) => Math.floor(Math.random() * maxNumber);
+
+
+const generateRandomArray = (row, columns) => {
+    let matriz = [];
+
+    for (let i = 0; i < row; i++) {
+        matriz[i] = [];
+        for (let j = 0; j < columns; j++) {
+            matriz[i][j] = Math.floor(Math.random() * 20);
+        }
+    }
+    return matriz;
+}
+
+const counterNumber = (num) =>{
+
+    if (num === 0) {
+        return 1;
+    }
+    if (num < 0) {
+        num = num * -1;
+    }
+
+    let digitNumber = 0;
+
+    while (num >= 1){
+        num = parseInt(num/10);
+        digitNumber++;
+    }
+    return digitNumber;
+}
+
+const factorialNumber = (num) => {
+
+    if (num === 0) {
+        return 1;
+    }
+    if (num < 0) {
+        num = num * -1;
+    }
+    let multiplication = 1;
+
+    for (let i = 1; i <= num; i++) {
+        multiplication = multiplication * i;
+    }
+    return multiplication;
+}
+
+const isNumberMultiple = (num1, num2) => num2 % num1 === 0;
+
+const randomArrayGenerator = (number) => {
+    const randomNumbers = [];
+
+    for (let i = 0; i < number; i++) {
+        randomNumbers.push(Math.floor(Math.random() * 100));
+    }
+    return randomNumbers;
+}
+
+export {convertAgeToSeconds, temCelsiusToFarenheit, getProfits, firstLetter, isPrime, finalDigit, twoDigitsF, numberGenerate, generateRandomArray, counterNumber, factorialNumber, isNumberMultiple, randomArrayGenerator};
