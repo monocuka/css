@@ -32,56 +32,10 @@
 </body>
 <script type="module">
 
-    import { isPrime } from './functions.js';
+    import { isPrime, finalDigit, twoDigitsF, numberGenerate, generateRandomArray ,counterNumber, factorialNumber, isNumberMultiple, randomArrayGenerator} from './functions.js';
 
 //Funciones para tareas especificas.
 
-//Función para generar numeros.
-
-const numberGenerate = (maxNumber) => Math.floor(Math.random() * maxNumber);
-
-//Función para Obtener el ultimo digito y los dos ultimos
-
-const finalDigit = (num) => num % 10;
-const twoDigitsF = (number) => number % 100;
-
-//funcion para obtener el primer digito de un  numero.
-
-
-//Función para contar los dígitos de un número.
-
-const counterNumber = (num) =>{
-
-    if (num === 0) {
-        return 1;
-    }
-    if (num < 0) {
-        num = num * -1;
-    }
-
-    let digitNumber = 0;
-
-    while (num >= 1){
-        num = parseInt(num/10);
-        digitNumber++;
-    }
-    return digitNumber;
-}
-
-//Función para generar una matriz.
-
-//Generar random array.
-const generateRandomArray = (row, columns) => {
-    let matriz = [];
-
-    for (let i = 0; i < row; i++) {
-        matriz[i] = [];
-        for (let j = 0; j < columns; j++) {
-            matriz[i][j] = Math.floor(Math.random() * 20);
-        }
-    }
-    return matriz;
-}
 
 const arrayToString = (arr) => {
     let stringArray = "";
@@ -91,44 +45,6 @@ const arrayToString = (arr) => {
     return stringArray;
 }
 
-//calcular el factorial de un Número.
-
-const factorialNumber = (num) => {
-
-    if (num === 0) {
-        return 1;
-    }
-    if (num < 0) {
-        num = num * -1;
-    }
-    let multiplication = 1;
-
-    for (let i = 1; i < num; i++) {
-        multiplication = multiplication * i;
-    }
-    return multiplication;
-}
-
-// Funcion para saber si un numero es multiplo de otro.
-
-const isNumberMultiple = (num1, num2) => {
-
-    if (num2 % num1 === 0) {
-        return true;
-    }
-    return false;
-} 
-
-//Función para generar un vector.
-
-const randomArrayGenerator = (number) => {
-    const randomNumbers = [];
-
-    for (let i = 0; i < number; i++) {
-        randomNumbers.push(Math.floor(Math.random() * 100));
-    }
-    return randomNumbers;
-}
 
 //Función para determinar el mayor numero de un array y su posición.
 
